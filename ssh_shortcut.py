@@ -41,13 +41,13 @@ while True :
 
     confirm = input(bcolors.WARNING +"Apply? (Y/n) "+ bcolors.ENDC).lower()
     if confirm == "y" or confirm == "Y" :
-        with open("/Users/shoellein/.ssh/config", "a") as ssh_config:
+        with open("~/.ssh/config", "a") as ssh_config:
             ssh_config.write("Host " +host +"\n" +"HostName " +hostname +"\n" +"Port " +port +"\n" +"User " +user +"\n")
         print()
 
         rsa = input(bcolors.WARNING +"Default IdentityFile (Y/n) "+ bcolors.ENDC).lower()
         if rsa == "y" or rsa == "Y" :
-            with open("/Users/shoellein/.ssh/config", "a") as ssh_config:
+            with open("~/.ssh/config", "a") as ssh_config:
                 ssh_config.write("IdentityFile /Users/shoellein/.ssh/id_rsa" +"\n" +"\n")
             print(bcolors.OKGREEN +"==============="+bcolors.ENDC)
             print(bcolors.OKGREEN +"#--- Host", hostname, "has been added"+bcolors.ENDC)
@@ -56,7 +56,7 @@ while True :
             pass
 
         else:
-            with open("/Users/shoellein/.ssh/config", "a") as ssh_config:
+            with open("~/.ssh/config", "a") as ssh_config:
                 ssh_config.write("\n")
             print(bcolors.OKGREEN +"==============="+bcolors.ENDC)
             print(bcolors.OKGREEN +"#--- Host", hostname, "has been added"+bcolors.ENDC)
